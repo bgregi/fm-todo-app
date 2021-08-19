@@ -12,11 +12,11 @@ $bright-blue: hsl(220, 98%, 61%);
 
 // - Very Light Gray: 
 $l-vl-gray: hsl(0, 0%, 98%);
-// - Very Light Grayish Blue: 
+// - Very Light Grayish Blue (todo item bottom border): 
 $l-vl-grayish-blue: hsl(236, 33%, 92%);
-// - Light Grayish Blue: 
+// - Light Grayish Blue (checked todo item): 
 $l-l-grayish-blue: hsl(233, 11%, 84%);
-// - Dark Grayish Blue: 
+// - Dark Grayish Blue (main body color): 
 $l-d-grayish-blue: hsl(236, 9%, 61%);
 // - Very Dark Grayish Blue: 
 $l-vd-grayish-blue: hsl(235, 19%, 35%);
@@ -81,20 +81,38 @@ body {
     padding: 5vw;
 }
 
-h1 {
-    font-family: Josefin Bold;
-    text-transform: uppercase;
-    color: $l-vl-gray;
-    font-size: 7vw;
-    letter-spacing: 2.5vw;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     margin: 20px 0 35px;
+
+    h1 {
+        font-family: Josefin Bold;
+        text-transform: uppercase;
+        color: $l-vl-gray;
+        font-size: 7vw;
+        letter-spacing: 2.5vw;
+        margin: 0;
+        
+    }
+
+    img {
+        width: 20px;
+    }
+
+    .disabled {
+        display: none;
+    }
+    
 
 }
 
 .light-box {
     background-color: white;
     box-sizing: border-box;
-    padding: 15px 0;
+    // padding: 15px 0;
     margin: 15px 0;
     border-radius: 5px;
     box-shadow: 0px 10px 30px rgba($color: #a0a0a0, $alpha: 0.3);
@@ -123,8 +141,8 @@ input {
 
 .checkbox {
     border: 0.5px solid $l-l-grayish-blue;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 
     display: flex;
     justify-content: center;
@@ -139,52 +157,67 @@ input {
     }
 }
 
-.todo-item {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.checkbox-checked {
+    background-image: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
-    padding: 0 20px 10px;
-
-    border-bottom: 1px solid $l-l-grayish-blue;
-
-    
-    p {
-        vertical-align: text-bottom;
-        width: 75%;
-        border: 1px solid gray;
-
-    }
-
-    font-size: 12px;
 }
 
-// background-image: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 15px 20px 15px;
+    
+    border-bottom: 1px solid $l-vl-grayish-blue;
 
+    font-size: 12px;
+    
+    .todo-item-main {
+        display: flex;
+        align-items: center;
+        
+        p {
+            // border: 1px solid gray;
+            margin: 0 0 0 10px;
+    
+        }
+
+        .todo-item-checked {
+            color: $l-l-grayish-blue;
+            text-decoration: line-through;
+        }
+    }
+
+    .delete-button {
+        width: 12px;
+    }
+
+}
 
 .bottom-info {
     font-size: 12px;
+    // color: $l-vl-grayish-blue;
 
-    padding: 15px 15px 0;
+    padding: 15px 20px;
+    height: 19.6px;
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 #filter-options {
     display: flex;
     justify-content: center;
 
+    padding: 15px 20px;
+
     span {
         font-size: 14px;
         margin: 0 10px;
     }
 }
-
-
-
-
-
 
 .attribution {
     margin: 100px 50px 20px;

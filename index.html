@@ -18,7 +18,12 @@
         <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     </head>
     <body>
-        <h1>Todo</h1>
+        <header>
+            <h1>Todo</h1>
+            <img src="images/icon-moon.svg" alt="Moon">
+            <img src="images/icon-sun.svg" alt="Sun" class="disabled">
+
+        </header>
 
         <div class="light-box" id="create-box">
             <div class="checkbox">
@@ -33,17 +38,34 @@
         </div>
 
         <div class="light-box">
+
             <div class="todo-item">
-                <div class="checkbox">
-                    <img src="images/icon-check.svg" alt="Check" />
+                <div class="todo-item-main">
+
+                    <div class="checkbox checkbox-checked">
+                        <img src="images/icon-check.svg" alt="Check" />
+                    </div>
+                    <p class="todo-item-checked">Complete online JavaScript course</p>
                 </div>
-                <p>Complete online JavaScript course</p>
-                <img src="images/icon-cross.svg" alt="Delete">
+                <img src="images/icon-cross.svg" alt="Delete" class="delete-button"/>
             </div>
+            
+            <div class="todo-item">
+                <div class="todo-item-main">
+
+                    <div class="checkbox">
+                        <img src="images/icon-check.svg" alt="Check" />
+                    </div>
+                    <p>Jog around the park 3x</p>
+                </div>
+                <img src="images/icon-cross.svg" alt="Delete" class="delete-button"/>
+            </div>
+
             <div class="bottom-info">
                 <span>5 items left</span>
                 <span>Clear Completed</span>
             </div>
+
         </div>
 
         <div class="light-box" id="filter-options">

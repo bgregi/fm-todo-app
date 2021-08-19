@@ -34,19 +34,30 @@ body {
   padding: 5vw;
 }
 
-h1 {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 35px;
+}
+header h1 {
   font-family: Josefin Bold;
   text-transform: uppercase;
   color: #fafafa;
   font-size: 7vw;
   letter-spacing: 2.5vw;
-  margin: 20px 0 35px;
+  margin: 0;
+}
+header img {
+  width: 20px;
+}
+header .disabled {
+  display: none;
 }
 
 .light-box {
   background-color: white;
   box-sizing: border-box;
-  padding: 15px 0;
   margin: 15px 0;
   border-radius: 5px;
   box-shadow: 0px 10px 30px rgba(160, 160, 160, 0.3);
@@ -70,8 +81,8 @@ input {
 
 .checkbox {
   border: 0.5px solid #d2d3db;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,30 +93,46 @@ input {
   height: 2.2vw;
 }
 
+.checkbox-checked {
+  background-image: linear-gradient(135deg, #57ddff, #c058f3);
+}
+
 .todo-item {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 20px 10px;
-  border-bottom: 1px solid #d2d3db;
+  padding: 15px 20px 15px;
+  border-bottom: 1px solid #e4e5f1;
   font-size: 12px;
 }
-.todo-item p {
-  vertical-align: text-bottom;
-  width: 75%;
-  border: 1px solid gray;
+.todo-item .todo-item-main {
+  display: flex;
+  align-items: center;
+}
+.todo-item .todo-item-main p {
+  margin: 0 0 0 10px;
+}
+.todo-item .todo-item-main .todo-item-checked {
+  color: #d2d3db;
+  text-decoration: line-through;
+}
+.todo-item .delete-button {
+  width: 12px;
 }
 
 .bottom-info {
   font-size: 12px;
-  padding: 15px 15px 0;
+  padding: 15px 20px;
+  height: 19.6px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #filter-options {
   display: flex;
   justify-content: center;
+  padding: 15px 20px;
 }
 #filter-options span {
   font-size: 14px;
