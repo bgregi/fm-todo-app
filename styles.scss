@@ -75,11 +75,10 @@ body {
     background-color: $l-vl-gray;
     background-image: url(images/bg-mobile-light.jpg);
     background-repeat: no-repeat;
+    background-size: 100vw;
 
     box-sizing: border-box;
     padding: 5vw;
-
-
 }
 
 h1 {
@@ -87,33 +86,99 @@ h1 {
     text-transform: uppercase;
     color: $l-vl-gray;
     font-size: 7vw;
-    letter-spacing: 1.5vw;
+    letter-spacing: 2.5vw;
+    margin: 20px 0 35px;
+
 }
 
 .light-box {
     background-color: white;
     box-sizing: border-box;
-    padding: 15px;
+    padding: 15px 0;
     margin: 15px 0;
     border-radius: 5px;
-    box-shadow: 0px 10px 20px gray;
+    box-shadow: 0px 10px 30px rgba($color: #a0a0a0, $alpha: 0.3);
     
-    display: flex;
-    align-items: center;
-
 }
 
-.checkbox {
-    border: 1px solid $l-l-grayish-blue;
-    width: 5vw;
-    height: 5vw;
+#create-box {
+    padding: 15px 20px;
 
-    border-radius: 3vw;
+    display: flex;
+    justify-content: left;
+
+    height: 50px;
 }
 
 input {
+    font-family: Josefin SemiBold, sans-serif;
+    opacity: .5;
+
     border: none;
     margin: 0 0 0 10px;
+    outline: none;
+
+    height: 22px;
+}
+
+.checkbox {
+    border: 0.5px solid $l-l-grayish-blue;
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    
+    img {
+        width: 2.8vw;
+        height: 2.2vw;
+        
+    }
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 0 20px 10px;
+
+    border-bottom: 1px solid $l-l-grayish-blue;
+
+    
+    p {
+        vertical-align: text-bottom;
+        width: 75%;
+        border: 1px solid gray;
+
+    }
+
+    font-size: 12px;
+}
+
+// background-image: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+
+.bottom-info {
+    font-size: 12px;
+
+    padding: 15px 15px 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#filter-options {
+    display: flex;
+    justify-content: center;
+
+    span {
+        font-size: 14px;
+        margin: 0 10px;
+    }
 }
 
 
@@ -122,9 +187,11 @@ input {
 
 
 .attribution {
-    margin-top: 100px;
+    margin: 100px 50px 20px;
     font-size: 12px;
+    text-align: center;
+
     a {
-        color: #2c7566;
+        color: $l-vd-grayish-blue;
     }
 }
