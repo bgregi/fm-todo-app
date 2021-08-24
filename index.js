@@ -1,6 +1,9 @@
 const input = document.getElementById("create-input")
 
-let todoList = []
+let todoList = [{
+    item: "hey",
+    isChecked: true
+}]
 
 function registerItem() {
     const item = input.value
@@ -19,6 +22,7 @@ function registerItem() {
     todoList.push(todoItem)
     
     console.log(todoItem)
+    console.log(todoList)
     
     input.value = ""
     
@@ -26,14 +30,24 @@ function registerItem() {
 }
 
 function listItems(list) {
-    for (i in list) {
-        let divTodoList = document.getElementById("todo-list")
+    let divTodoList = document.getElementById("todo-list")
+
+    //Removes all child nodes
+    while (divTodoList.firstChild) {
+        divTodoList.removeChild(divTodoList.firstChild)
+    }
+
+    console.log(divTodoList.childNodes)
+    console.log(typeof(divTodoList.childNodes))
+
+    //Reconstructs all nodes with provided array
+    for (i of list) {
 
         let divTodoItem = document.createElement("div")
         divTodoItem.className = "todo-item"
         
         let divTodoItemMain = document.createElement("div")
-        divTodoItem.className = "todo-item-main"
+        divTodoItemMain.className = "todo-item-main"
 
         let divCheckBox = document.createElement("div")
         divCheckBox.className = "checkbox"
@@ -45,14 +59,16 @@ function listItems(list) {
         let pItem = document.createElement("p")
 
         let text = document.createTextNode(i.item)
+
+        // console.log(list)
         
         let imgCross = document.createElement("img")
-        imgCross.scr = "images/icon-cross.svg"
+        imgCross.src = "./images/icon-cross.svg"
         imgCross.alt = "Delete"
         imgCross.className = "delete-button"
         
         if (i.isChecked == true) {
-            divCheckBox.className = "checkbox-checked"
+            divCheckBox.classList.add("checkbox-checked")
             pItem.className = "todo-item-checked"
         }
 
@@ -67,12 +83,33 @@ function listItems(list) {
         divTodoItem.appendChild(imgCross)
 
         divTodoList.appendChild(divTodoItem)
-
-
-
     }
 
+    //Shows how many items are unchecked
+    itemsLeft(list)
+
 }
+
+function itemsLeft(list) {
+    //Filters checked items in the list
+    let onlyUnchecked = list.filter(i => i.isChecked == false)
+    
+    let divBottomInfo = document.getElementById("bottom-info")
+
+    //Clears existing span
+    divBottomInfo.removeChild(divBottomInfo.firstChild)
+
+    let length = document.createTextNode(onlyUnchecked.length + " items left")
+
+    let span = document.createElement("span")
+
+    //Appends new span
+    span.appendChild(length)
+    divBottomInfo.prepend(span)
+
+}
+
+
 
 const createButton = document.getElementById("create-button")
 createButton.addEventListener("click", registerItem)
@@ -85,4 +122,3 @@ input.addEventListener("keyup", function (event) {
     }
 }
 )
-
