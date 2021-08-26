@@ -161,6 +161,14 @@ input {
   box-shadow: 0px 10px 30px rgba(160, 160, 160, 0.3);
 }
 
+.l-input {
+  opacity: 0.5;
+}
+
+.l-checkbox {
+  border: 0.5px solid #d2d3db;
+}
+
 .d-body {
   color: #cacde8;
   background-color: #161722;
@@ -170,6 +178,19 @@ input {
 .d-box {
   background-color: #25273c;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.d-input {
+  opacity: 0.5;
+  background-color: transparent;
+}
+
+.d-input::placeholder {
+  color: #d2d3db;
+}
+
+.d-checkbox {
+  border: 0.5px solid red;
 }
 
 /*# sourceMappingURL=styles.css.map */

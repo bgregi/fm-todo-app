@@ -243,7 +243,13 @@ input {
     box-shadow: 0px 10px 30px rgba($color: #a0a0a0, $alpha: 0.3);
 }
 
+.l-input {
+    opacity: .5;
+}
 
+.l-checkbox {
+    border: 0.5px solid $l-l-grayish-blue;
+}
 
 
 ////////////////////////////DARK THEME
@@ -260,6 +266,19 @@ input {
     background-color: $d-vd-desat-blue;
     box-shadow: 0px 10px 30px rgba($color: black, $alpha: 0.3);
     
+}
+
+.d-input {
+    opacity: .5;
+    background-color: transparent;
+    
+}
+.d-input::placeholder {
+    color: $l-l-grayish-blue;
+}
+
+.d-checkbox {
+    border: 0.5px solid red;
 }
 
 // #create-box {

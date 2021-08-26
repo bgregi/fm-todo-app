@@ -56,6 +56,15 @@ function listItems(list) {
         divCheckBox.classList.add("checkbox-list")
         divCheckBox.id = "c-" + list.indexOf(i)
 
+        //Checks if light or dark theme is on
+        let lightTheme = document.getElementById("moon-button")
+        //Applies class to divCheckBox according to theme
+        if (lightTheme.classList.contains("disabled")) {
+            divCheckBox.classList.add("d-checkbox")
+        } else {
+            divCheckBox.classList.add("l-checkbox")
+        }
+
         let imgCheck = document.createElement("img")
         imgCheck.src = "images/icon-check.svg"
         imgCheck.alt = "Check"
@@ -225,6 +234,22 @@ function toggleTheme() {
     createBox.classList.toggle("d-box")
     todoBox.classList.toggle("d-box")
     filterOptions.classList.toggle("d-box")
+
+    //INPUT
+    let input = document.getElementById("create-input")
+    input.classList.toggle("l-input")
+    input.classList.toggle("d-input")
+
+    //CHECKBOX
+    let checkbox = document.getElementsByClassName("checkbox")
+    console.log(checkbox)
+    console.log(typeof(checkbox))
+    for (i in checkbox) {
+        // i.classList.toggle("l-checkbox")
+        // i.classList.toggle("d-checkbox")
+        // console.log(typeof(i))
+
+    }
 
 }
 let moonButton = document.getElementById("moon-button")
