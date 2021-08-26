@@ -25,9 +25,6 @@
 body {
   font-family: Josefin SemiBold, sans-serif;
   font-size: 18px;
-  color: #9394a5;
-  background-color: #fafafa;
-  background-image: url(images/bg-mobile-light.jpg);
   background-repeat: no-repeat;
   background-size: 100vw;
   box-sizing: border-box;
@@ -55,12 +52,10 @@ header .disabled {
   display: none;
 }
 
-.light-box {
-  background-color: white;
+.box {
   box-sizing: border-box;
   margin: 15px 0;
   border-radius: 5px;
-  box-shadow: 0px 10px 30px rgba(160, 160, 160, 0.3);
 }
 
 #create-box {
@@ -90,8 +85,8 @@ input {
   border-radius: 50%;
 }
 .checkbox img {
-  width: 2.8vw;
-  height: 2.2vw;
+  width: 10.5px;
+  height: 9px;
 }
 
 .checkbox-checked {
@@ -142,6 +137,9 @@ input {
   font-size: 14px;
   margin: 0 10px;
 }
+#filter-options .span-active {
+  color: #3a7bfd;
+}
 
 .attribution {
   margin: 100px 50px 20px;
@@ -150,6 +148,28 @@ input {
 }
 .attribution a {
   color: #484b6a;
+}
+
+.l-body {
+  color: #9394a5;
+  background-color: #fafafa;
+  background-image: url(images/bg-mobile-light.jpg);
+}
+
+.l-box {
+  background-color: white;
+  box-shadow: 0px 10px 30px rgba(160, 160, 160, 0.3);
+}
+
+.d-body {
+  color: #cacde8;
+  background-color: #161722;
+  background-image: url(images/bg-mobile-dark.jpg);
+}
+
+.d-box {
+  background-color: #25273c;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=styles.css.map */

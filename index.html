@@ -17,15 +17,15 @@
 
         <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     </head>
-    <body>
+    <body id="body" class="l-body">
         <header>
             <h1>Todo</h1>
-            <img src="images/icon-moon.svg" alt="Moon">
-            <img src="images/icon-sun.svg" alt="Sun" class="disabled">
+            <img src="images/icon-moon.svg" alt="Moon" id="moon-button">
+            <img src="images/icon-sun.svg" alt="Sun" class="disabled" id="sun-button">
 
         </header>
 
-        <div class="light-box" id="create-box">
+        <div class="box l-box" id="create-box">
             <div class="checkbox">
                 <img src="images/icon-check.svg" alt="Create" id="create-button"/>
             </div>
@@ -37,7 +37,7 @@
             />
         </div>
 
-        <div class="light-box" id="todo-box">
+        <div class="box l-box" id="todo-box">
             <div id="todo-list"></div>
 
             <div id="bottom-info">
@@ -46,8 +46,8 @@
 
         </div>
 
-        <div class="light-box" id="filter-options">
-            <span id="filter-all">All</span>
+        <div class="box l-box" id="filter-options">
+            <span id="filter-all" class="span-active">All</span>
             <span id="filter-active">Active</span>
             <span id="filter-completed">Completed</span>
         </div>

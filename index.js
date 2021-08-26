@@ -167,6 +167,12 @@ clearButton.addEventListener("click", clearCompleted)
 
 function filterAll() {
     listItems(todoList)
+
+    if (allButton.className != "span-active") {
+        allButton.className = "span-active"
+        activeButton.className = ""
+        completedButton.className = ""
+    }
 }
 let allButton = document.getElementById("filter-all")
 allButton.addEventListener("click", filterAll)
@@ -175,6 +181,12 @@ function filterActive() {
     let onlyActive = todoList.filter(i => i.isChecked == false)
 
     listItems(onlyActive)
+
+    if (activeButton.className != "span-active") {
+        activeButton.className = "span-active"
+        allButton.className = ""
+        completedButton.className = ""
+    }
 }
 let activeButton = document.getElementById("filter-active")
 activeButton.addEventListener("click", filterActive)
@@ -183,6 +195,39 @@ function filterCompleted() {
     let onlyCompleted = todoList.filter(i => i.isChecked == true)
 
     listItems(onlyCompleted)
+
+    if (completedButton.className != "span-active") {
+        completedButton.className = "span-active"
+        allButton.className = ""
+        activeButton.className = ""
+    }
 }
 let completedButton = document.getElementById("filter-completed")
 completedButton.addEventListener("click", filterCompleted)
+
+function toggleTheme() {
+    //THEME BUTTON
+    moonButton.classList.toggle("disabled")
+    sunButton.classList.toggle("disabled")
+
+    //BODY
+    let body = document.getElementById("body")
+    body.classList.toggle("d-body")
+    body.classList.toggle("l-body")
+
+    //BOX
+    let createBox = document.getElementById("create-box")
+    let todoBox = document.getElementById("todo-box")
+    let filterOptions = document.getElementById("filter-options")
+    createBox.classList.toggle("l-box")
+    todoBox.classList.toggle("l-box")
+    filterOptions.classList.toggle("l-box")
+    createBox.classList.toggle("d-box")
+    todoBox.classList.toggle("d-box")
+    filterOptions.classList.toggle("d-box")
+
+}
+let moonButton = document.getElementById("moon-button")
+let sunButton = document.getElementById("sun-button")
+moonButton.addEventListener("click", toggleTheme)
+sunButton.addEventListener("click", toggleTheme)
