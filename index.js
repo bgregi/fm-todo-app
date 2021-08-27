@@ -95,6 +95,7 @@ function listItems(list) {
 
         if (i.isChecked == true) {
             divCheckBox.classList.add("checkbox-checked")
+            imgCheck.src = "images/icon-check.svg"
 
             if (lightTheme.classList.contains("disabled")) {
                 pItem.className = "d-todo-item-checked"
@@ -258,16 +259,16 @@ function toggleTheme() {
     let checkbox = document.getElementsByClassName("checkbox")
     console.log(checkbox)
 
-    //Checks if light or dark theme is on
+    ///Checks if light or dark theme is on
     let lightTheme = document.getElementById("moon-button")
 
     for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].classList.toggle("l-checkbox")
         checkbox[i].classList.toggle("d-checkbox")
 
-        //Checks if it's the input checkbox
+        ////Checks if it's the input checkbox
         if (checkbox[i].hasChildNodes()) {
-            //Checks theme and applies correct img path
+            /////Checks theme and applies correct img path
             if (lightTheme.classList.contains("disabled")) {
                 checkbox[i].childNodes[0].src = "images/icon-check-dark.svg"
             } else {
@@ -283,6 +284,13 @@ function toggleTheme() {
         divTodoItem[i].classList.toggle("l-todo-item")
         divTodoItem[i].classList.toggle("d-todo-item")
     }
+
+    //BOTTOM INFO
+    let bottomInfo = document.getElementById("bottom-info")
+    bottomInfo.classList.toggle("d-bottom-info")
+
+    //FILTER OPTIONS
+    filterOptions.classList.toggle("d-filter-options")
 
 
 

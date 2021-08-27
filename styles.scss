@@ -188,7 +188,6 @@ input {
 
 #bottom-info {
     font-size: 12px;
-    // color: $l-vl-grayish-blue;
 
     padding: 15px 20px;
     height: 19.6px;
@@ -254,7 +253,6 @@ input {
     }
 }
 
-
 ////////////////////////////DARK THEME
 
 
@@ -292,4 +290,12 @@ input {
         color: $d-vd-grayish-blue;
         text-decoration: line-through;
     }
+}
+
+.d-bottom-info {
+    color: $d-vd-grayish-blue;
+}
+
+.d-filter-options {
+    color: $d-vd-grayish-blue;
 }
