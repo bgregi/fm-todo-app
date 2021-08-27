@@ -100,7 +100,6 @@ input {
   padding: 15px 20px 15px;
   height: 50px;
   box-sizing: border-box;
-  border-bottom: 1px solid #e4e5f1;
   font-size: 12px;
 }
 .todo-item .todo-item-main {
@@ -110,10 +109,6 @@ input {
 }
 .todo-item .todo-item-main p {
   margin: 3px 0 0 10px;
-}
-.todo-item .todo-item-main .todo-item-checked {
-  color: #d2d3db;
-  text-decoration: line-through;
 }
 .todo-item .delete-button {
   width: 12px;
@@ -169,6 +164,14 @@ input {
   border: 0.5px solid #d2d3db;
 }
 
+.l-todo-item {
+  border-bottom: 1px solid #e4e5f1;
+}
+.l-todo-item .l-todo-item-checked {
+  color: #d2d3db;
+  text-decoration: line-through;
+}
+
 .d-body {
   color: #cacde8;
   background-color: #161722;
@@ -181,6 +184,7 @@ input {
 }
 
 .d-input {
+  color: #cacde8;
   opacity: 0.5;
   background-color: transparent;
 }
@@ -190,7 +194,15 @@ input {
 }
 
 .d-checkbox {
-  border: 0.5px solid red;
+  border: 0.5px solid #4d5066;
+}
+
+.d-todo-item {
+  border-bottom: 1px solid #4d5066;
+}
+.d-todo-item .d-todo-item-checked {
+  color: #4d5066;
+  text-decoration: line-through;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -42,11 +42,14 @@ function listItems(list) {
         divTodoList.removeChild(divTodoList.firstChild)
     }
 
+    //Gets theme toggle button for theme checking below
+    let lightTheme = document.getElementById("moon-button")
+
     //Reconstructs all nodes with provided array
     for (i of list) {
 
         let divTodoItem = document.createElement("div")
-        divTodoItem.className = "todo-item"
+        divTodoItem.classList.add("todo-item")
 
         let divTodoItemMain = document.createElement("div")
         divTodoItemMain.className = "todo-item-main"
@@ -56,33 +59,48 @@ function listItems(list) {
         divCheckBox.classList.add("checkbox-list")
         divCheckBox.id = "c-" + list.indexOf(i)
 
-        //Checks if light or dark theme is on
-        let lightTheme = document.getElementById("moon-button")
-        //Applies class to divCheckBox according to theme
-        if (lightTheme.classList.contains("disabled")) {
-            divCheckBox.classList.add("d-checkbox")
-        } else {
-            divCheckBox.classList.add("l-checkbox")
-        }
-
         let imgCheck = document.createElement("img")
-        imgCheck.src = "images/icon-check.svg"
         imgCheck.alt = "Check"
         imgCheck.id = "i-" + list.indexOf(i)
-
+        
         let pItem = document.createElement("p")
-
+        
         let text = document.createTextNode(i.item)
-
+        
         let imgCross = document.createElement("img")
         imgCross.src = "./images/icon-cross.svg"
         imgCross.alt = "Delete"
         imgCross.className = "delete-button"
         imgCross.id = "d-" + list.indexOf(i)
 
+
+
+
+        //Applies other settings according to theme
+        if (lightTheme.classList.contains("disabled")) {
+            imgCheck.src = "images/icon-check-dark.svg"            
+            divCheckBox.classList.add("d-checkbox")
+            divTodoItem.classList.add("d-todo-item")
+            
+        } else {
+            imgCheck.src = "images/icon-check.svg"
+            divCheckBox.classList.add("l-checkbox")
+            divTodoItem.classList.add("l-todo-item")
+
+        }
+
+
+
+
+
         if (i.isChecked == true) {
             divCheckBox.classList.add("checkbox-checked")
-            pItem.className = "todo-item-checked"
+
+            if (lightTheme.classList.contains("disabled")) {
+                pItem.className = "d-todo-item-checked"
+            } else {
+                pItem.className = "l-todo-item-checked"                
+            }
         }
 
         //Appends
@@ -128,9 +146,6 @@ document.addEventListener('click', function(e) {
     var target = e.target || e.srcElement,
         text = target.textContent || target.innerText;
     
-
-    // let deleteIndex = parseInt(target.id)
-
     if (target.className == "delete-button") {
         deleteItem(target)
     }
@@ -166,7 +181,6 @@ function checkItem(target) {
 function clearCompleted() {
     let onlyUnchecked = todoList.filter(i => i.isChecked == false)
 
-    // console.log(todoList)
     todoList = onlyUnchecked
 
     listItems(onlyUnchecked)
@@ -243,13 +257,36 @@ function toggleTheme() {
     //CHECKBOX
     let checkbox = document.getElementsByClassName("checkbox")
     console.log(checkbox)
-    console.log(typeof(checkbox))
-    for (i in checkbox) {
-        // i.classList.toggle("l-checkbox")
-        // i.classList.toggle("d-checkbox")
-        // console.log(typeof(i))
 
+    //Checks if light or dark theme is on
+    let lightTheme = document.getElementById("moon-button")
+
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].classList.toggle("l-checkbox")
+        checkbox[i].classList.toggle("d-checkbox")
+
+        //Checks if it's the input checkbox
+        if (checkbox[i].hasChildNodes()) {
+            //Checks theme and applies correct img path
+            if (lightTheme.classList.contains("disabled")) {
+                checkbox[i].childNodes[0].src = "images/icon-check-dark.svg"
+            } else {
+                checkbox[i].childNodes[0].src = "images/icon-check.svg"
+            }
+        }
     }
+
+    //TODO ITEM
+    let divTodoItem = document.getElementsByClassName("todo-item")
+
+    for (let i = 0; i < divTodoItem.length; i ++) {
+        divTodoItem[i].classList.toggle("l-todo-item")
+        divTodoItem[i].classList.toggle("d-todo-item")
+    }
+
+
+
+
 
 }
 let moonButton = document.getElementById("moon-button")
