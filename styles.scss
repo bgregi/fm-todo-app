@@ -108,7 +108,6 @@ header {
 
 .box {
     box-sizing: border-box;
-    // padding: 15px 0;
     margin: 15px 0;
     border-radius: 5px;
 }
@@ -125,7 +124,7 @@ header {
 input {
     font-family: Josefin SemiBold, sans-serif;
     font-size: 12px;
-    opacity: .5;
+    color: $l-vd-grayish-blue;
 
     border: none;
     margin: 0 0 0 10px;
@@ -186,6 +185,10 @@ input {
 
 }
 
+.span-hidden {
+    display: none;
+}
+
 #bottom-info {
     font-size: 12px;
 
@@ -235,8 +238,8 @@ input {
     box-shadow: 0px 10px 30px rgba($color: #a0a0a0, $alpha: 0.3);
 }
 
-.l-input {
-    opacity: .5;
+.l-input::placeholder {
+    color: $l-d-grayish-blue;
 }
 
 .l-checkbox {
@@ -246,9 +249,15 @@ input {
 .l-todo-item {
     border-bottom: 1px solid $l-vl-grayish-blue;
 
+    
     .l-todo-item-checked {
         color: $l-l-grayish-blue;
         text-decoration: line-through;
+        
+    }
+    
+    p {
+        color: $l-vd-grayish-blue;
 
     }
 }
@@ -271,12 +280,11 @@ input {
 
 .d-input {
     color: $d-l-grayish-blue;
-    opacity: .5;
     background-color: transparent;
     
 }
 .d-input::placeholder {
-    color: $l-l-grayish-blue;
+    color: $d-d-grayish-blue;
 }
 
 .d-checkbox {
@@ -298,4 +306,124 @@ input {
 
 .d-filter-options {
     color: $d-vd-grayish-blue;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////DESKTOP LAYOUT/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+@media only screen and (min-width: 800px) {
+    body {
+        font-size: 18px;
+        padding: 40px 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header {
+        width: 480px;
+        margin: 15px 0 20px;
+        h1 {
+            font-size: 37px;
+            letter-spacing: 15px;
+        }
+    
+        img {
+            width: 25px;
+            margin-bottom: 10px;
+        }    
+    }
+    
+    .box {
+        margin: 15px 0;
+        border-radius: 5px;
+        width: 480px;
+    }
+    
+    #create-box {
+        padding: 15px 20px;
+        align-items: center;    
+        height: 60px;
+    }
+    
+    input {
+        font-size: 17px;
+    }
+    
+    .checkbox {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .todo-item {
+        padding: 15px 20px 15px;
+        height: 60px;
+        box-sizing: border-box;
+    
+        font-size: 17px;
+        
+        .todo-item-main {
+            display: flex;
+            align-items: center;
+            height: 20px;
+            
+            p {
+                margin: 3px 0 0 10px;
+        
+            }
+        }
+    
+        .delete-button {
+            width: 12px;
+        }
+    
+    }
+
+    .span-hidden {
+        display: block;
+    }
+    
+    // #bottom-info {
+    //     font-size: 12px;
+    
+    //     padding: 15px 20px;
+    //     height: 19.6px;
+    
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
+    
+    #filter-options {
+        display: none;
+    }
+    
+    // .attribution {
+    //     margin: 100px 50px 20px;
+    //     font-size: 12px;
+    //     text-align: center;
+    
+    //     a {
+    //         color: $l-vd-grayish-blue;
+    //     }
+    // }
+
+    ////////////////////////////LIGHT THEME
+    .l-body {
+        background-color: $l-vl-gray;
+        background-image: url(images/bg-desktop-light.jpg);
+        
+    }
+
+    // ////////////////////////////DARK THEME
+
+
+    .d-body {
+        background-color: $d-vd-blue;
+        background-image: url(images/bg-desktop-dark.jpg);
+    }
 }

@@ -68,7 +68,7 @@ header .disabled {
 input {
   font-family: Josefin SemiBold, sans-serif;
   font-size: 12px;
-  opacity: 0.5;
+  color: #484b6a;
   border: none;
   margin: 0 0 0 10px;
   outline: none;
@@ -114,6 +114,10 @@ input {
   width: 12px;
 }
 
+.span-hidden {
+  display: none;
+}
+
 #bottom-info {
   font-size: 12px;
   padding: 15px 20px;
@@ -156,8 +160,8 @@ input {
   box-shadow: 0px 10px 30px rgba(160, 160, 160, 0.3);
 }
 
-.l-input {
-  opacity: 0.5;
+.l-input::placeholder {
+  color: #9394a5;
 }
 
 .l-checkbox {
@@ -170,6 +174,9 @@ input {
 .l-todo-item .l-todo-item-checked {
   color: #d2d3db;
   text-decoration: line-through;
+}
+.l-todo-item p {
+  color: #484b6a;
 }
 
 .d-body {
@@ -185,12 +192,11 @@ input {
 
 .d-input {
   color: #cacde8;
-  opacity: 0.5;
   background-color: transparent;
 }
 
 .d-input::placeholder {
-  color: #d2d3db;
+  color: #777a92;
 }
 
 .d-checkbox {
@@ -211,6 +217,86 @@ input {
 
 .d-filter-options {
   color: #4d5066;
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    font-size: 18px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    width: 480px;
+    margin: 15px 0 20px;
+  }
+  header h1 {
+    font-size: 37px;
+    letter-spacing: 15px;
+  }
+  header img {
+    width: 25px;
+    margin-bottom: 10px;
+  }
+
+  .box {
+    margin: 15px 0;
+    border-radius: 5px;
+    width: 480px;
+  }
+
+  #create-box {
+    padding: 15px 20px;
+    align-items: center;
+    height: 60px;
+  }
+
+  input {
+    font-size: 17px;
+  }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .todo-item {
+    padding: 15px 20px 15px;
+    height: 60px;
+    box-sizing: border-box;
+    font-size: 17px;
+  }
+  .todo-item .todo-item-main {
+    display: flex;
+    align-items: center;
+    height: 20px;
+  }
+  .todo-item .todo-item-main p {
+    margin: 3px 0 0 10px;
+  }
+  .todo-item .delete-button {
+    width: 12px;
+  }
+
+  .span-hidden {
+    display: block;
+  }
+
+  #filter-options {
+    display: none;
+  }
+
+  .l-body {
+    background-color: #fafafa;
+    background-image: url(images/bg-desktop-light.jpg);
+  }
+
+  .d-body {
+    background-color: #161722;
+    background-image: url(images/bg-desktop-dark.jpg);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

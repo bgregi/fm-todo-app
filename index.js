@@ -141,7 +141,7 @@ function itemsLeft(list) {
 
 }
 
-//Gets id of delete button when clicked (used in deleteItem function)
+//Gets id of delete button when clicked (used in deleteItem and checkItem functions)
 document.addEventListener('click', function(e) {
     e = e || window.event;
     var target = e.target || e.srcElement,
@@ -151,7 +151,7 @@ document.addEventListener('click', function(e) {
         deleteItem(target)
     }
 
-    if (target.className == "checkbox-list" || target.alt == "Check") {
+    if (target.classList.contains("checkbox-list") || target.alt == "Check") {
         checkItem(target)
     }
 
