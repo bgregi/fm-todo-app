@@ -64,6 +64,7 @@ function listItems(list) {
         imgCheck.id = "i-" + list.indexOf(i)
         
         let pItem = document.createElement("p")
+        pItem.id = "p-" + list.indexOf(i)
         
         let text = document.createTextNode(i.item)
         
@@ -151,8 +152,11 @@ document.addEventListener('click', function(e) {
         deleteItem(target)
     }
 
-    if (target.classList.contains("checkbox-list") || target.alt == "Check") {
-        checkItem(target)
+    if (target.classList.contains("checkbox-list") || target.alt == "Check" || 
+        target.tagName == "P") {
+            console.log(target)
+            console.log(target.tagName)
+            checkItem(target)
     }
 
 }, false);

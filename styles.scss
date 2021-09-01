@@ -131,6 +131,7 @@ input {
     outline: none;
 
     height: 22px;
+    width: 200px;
 }
 
 .checkbox {
@@ -185,7 +186,7 @@ input {
 
 }
 
-.span-hidden {
+.bottom-hidden {
     display: none;
 }
 
@@ -309,12 +310,12 @@ input {
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////DESKTOP LAYOUT/////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 600px) {
     body {
         font-size: 18px;
         padding: 40px 30px;
@@ -335,7 +336,11 @@ input {
         img {
             width: 25px;
             margin-bottom: 10px;
-        }    
+        }
+        
+        img:hover {
+            cursor: pointer;
+        }
     }
     
     .box {
@@ -352,6 +357,7 @@ input {
     
     input {
         font-size: 17px;
+        width: 350px;
     }
     
     .checkbox {
@@ -376,42 +382,58 @@ input {
         
             }
         }
+        .todo-item-main:hover {
+            cursor: pointer;
+        }
     
         .delete-button {
-            width: 12px;
+            width: 15px;
+            display: none;
         }
     
     }
 
-    .span-hidden {
+    .todo-item:hover {
+        .delete-button {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .bottom-hidden {
         display: block;
     }
     
-    // #bottom-info {
-    //     font-size: 12px;
-    
-    //     padding: 15px 20px;
-    //     height: 19.6px;
-    
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    // }
+    #bottom-info {
+        font-size: 13px;
+
+        span {
+            width: 102px;
+        }
+
+        .bottom-filter {
+            span {
+                padding: 0 5px;
+            }
+
+            .span-active {
+                color: $bright-blue;
+            }
+
+            span:hover {
+                cursor: pointer;
+            }
+
+        }
+        #clear-button:hover {
+            cursor: pointer;
+        }
+    }
     
     #filter-options {
         display: none;
     }
     
-    // .attribution {
-    //     margin: 100px 50px 20px;
-    //     font-size: 12px;
-    //     text-align: center;
-    
-    //     a {
-    //         color: $l-vd-grayish-blue;
-    //     }
-    // }
-
     ////////////////////////////LIGHT THEME
     .l-body {
         background-color: $l-vl-gray;
@@ -420,8 +442,6 @@ input {
     }
 
     // ////////////////////////////DARK THEME
-
-
     .d-body {
         background-color: $d-vd-blue;
         background-image: url(images/bg-desktop-dark.jpg);

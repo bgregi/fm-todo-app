@@ -73,6 +73,7 @@ input {
   margin: 0 0 0 10px;
   outline: none;
   height: 22px;
+  width: 200px;
 }
 
 .checkbox {
@@ -114,7 +115,7 @@ input {
   width: 12px;
 }
 
-.span-hidden {
+.bottom-hidden {
   display: none;
 }
 
@@ -219,7 +220,7 @@ input {
   color: #4d5066;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 600px) {
   body {
     font-size: 18px;
     padding: 40px 30px;
@@ -240,6 +241,9 @@ input {
     width: 25px;
     margin-bottom: 10px;
   }
+  header img:hover {
+    cursor: pointer;
+  }
 
   .box {
     margin: 15px 0;
@@ -255,6 +259,7 @@ input {
 
   input {
     font-size: 17px;
+    width: 350px;
   }
 
   .checkbox {
@@ -276,12 +281,40 @@ input {
   .todo-item .todo-item-main p {
     margin: 3px 0 0 10px;
   }
+  .todo-item .todo-item-main:hover {
+    cursor: pointer;
+  }
   .todo-item .delete-button {
-    width: 12px;
+    width: 15px;
+    display: none;
   }
 
-  .span-hidden {
+  .todo-item:hover .delete-button {
     display: block;
+    cursor: pointer;
+  }
+
+  .bottom-hidden {
+    display: block;
+  }
+
+  #bottom-info {
+    font-size: 13px;
+  }
+  #bottom-info span {
+    width: 102px;
+  }
+  #bottom-info .bottom-filter span {
+    padding: 0 5px;
+  }
+  #bottom-info .bottom-filter .span-active {
+    color: #3a7bfd;
+  }
+  #bottom-info .bottom-filter span:hover {
+    cursor: pointer;
+  }
+  #bottom-info #clear-button:hover {
+    cursor: pointer;
   }
 
   #filter-options {
