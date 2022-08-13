@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/bgregi/todo-app](https://github.com/bgregi/todo-app)
-- Live Site URL: [https://bgregi.github.io/todo-app/](https://bgregi.github.io/todo-app/)
+- Solution URL: [https://github.com/bgregi/fm-todo-app](https://github.com/bgregi/fm-todo-app)
+- Live Site URL: [https://bgregi.github.io/fm-todo-app/](https://bgregi.github.io/fm-todo-app/)
 
 ## My process
 
